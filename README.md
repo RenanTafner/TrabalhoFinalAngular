@@ -4,8 +4,8 @@ Trabalho final da disciplina de Angular / Vue desenvolvido usando Angular com a 
 
 # Integrantes
 
-Renan Carlos Silva Braz Tafner
-Jonathan Souza
+1. Renan Carlos Silva Braz Tafner
+2. Jonathan Souza
 
 
 
