@@ -1,0 +1,45 @@
+<div class = "characterDetail">
+    <h1>Character Detail</h1>
+</div>
+
+<div class ="characterName">
+    <h1>Character Name</h1>
+        {{character.name}}
+        <br>
+        <br>
+</div>
+
+
+<div class ="characterDescription">
+    <h1>Character Description</h1>
+    <div *ngIf="character.description === ''">No description found the character specified.</div>
+    {{character.description}}
+    <br>
+    <br>
+</div>
+
+<div class ="characterImage">
+    <h1>Character Image</h1>
+    <img src = {{characterSrcImage}} alt="Character Image not Found" width="200px"/>
+    <br>
+    <br>
+</div>
+
+<div class ="characterImage">
+    <h1>Character Events</h1>
+    <a [routerLink]="['/character-events-route/', character.id]" routerLinkActive = "active">
+        Access Character Events
+        </a>
+    <br>
+    <br>
+</div>
+
+<div class = "linkBackCharacterList">
+    <br>
+    <a [routerLink]="['']" routerLinkActive = "active">Back to Characters List </a>
+    <br>
+    <br>
+</div>
+
+
+
