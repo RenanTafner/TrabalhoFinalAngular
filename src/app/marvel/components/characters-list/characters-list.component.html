@@ -6,7 +6,7 @@
     
       <div class="characterList">
         <br>
-        Click the character title in the following list to acess its details.
+        Click the character name in the following list to acess its details.
       <ul >
         <li *ngFor="let character of marvelStore.characters$ | async">
           <a [routerLink]="['/character-detail-route/', character.id]" routerLinkActive = "active">
