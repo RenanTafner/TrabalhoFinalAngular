@@ -2,6 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IEventApiResult } from '../models/IEventApiResult';
+import { IComicsApiResult } from '../models/IComicsApiResult';
+import { IStoriesApiResult } from '../models/IStoriesApiResult';
+import { ISeriesApiResult } from '../models/ISeriesApiResult';
+
 import { ICharacterApiResult } from '../models/ICharacterApiResult';
 import { ICharacterItem } from '../models/ICharacterItem';
 
@@ -32,5 +36,20 @@ export class MarvelService {
 
   }
 
+  getCharacterComics(id: string) : Observable<IComicsApiResult>{
+    return this.http.get<IComicsApiResult>(`${this.BASE_URL}/characters/${id}/comics?ts=1&apikey=${this.API_KEY}`);
+  }
+
+  getComicsCharacter(id: string) : Observable<ICharacterApiResult>{
+    return this.http.get<ICharacterApiResult>(`${this.BASE_URL}/comics/${id}/characters?ts=1&apikey=${this.API_KEY}`);
+  }
+
+  getCharacterStories(id: string) : Observable<IStoriesApiResult>{
+    return this.http.get<IStoriesApiResult>(`${this.BASE_URL}/characters/${id}/stories?ts=1&apikey=${this.API_KEY}`);
+  }
+
+  getCharacterSeries(id: string) : Observable<ISeriesApiResult>{
+    return this.http.get<ISeriesApiResult>(`${this.BASE_URL}/characters/${id}/stories?ts=1&apikey=${this.API_KEY}`);
+  }
 
 }
