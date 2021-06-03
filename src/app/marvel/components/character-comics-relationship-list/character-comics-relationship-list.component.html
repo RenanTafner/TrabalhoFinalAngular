@@ -1,0 +1,33 @@
+<section class="characters-container">
+
+    <div class = "characterListTitle">
+      <h1>Characters List</h1>
+    </div>
+    
+      <div class="characterList">
+        <br>
+        Click the character name in the following list to acess its details.
+
+
+     <div *ngIf="!characters"> 
+          Loading.... 
+     </div>
+
+     <div *ngIf="characters"> 
+       
+      <div *ngIf="characters.data.results.length === 0">
+        No Characters
+     </div>  
+
+      <ul >
+        <li *ngFor="let character of characters.data.results">
+          <a [routerLink]="['/character-detail-route/', character.id]" routerLinkActive = "active">
+            {{character.name}}
+          </a>
+        </li>
+    
+      </ul>
+    </div> 
+  </div>
+      
+</section>
